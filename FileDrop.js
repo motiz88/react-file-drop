@@ -23,9 +23,6 @@
             targetAlwaysVisible: React.PropTypes.bool,
             frame: function(props, propName, componentName) {
                 var prop = props[propName];
-                if (prop == null) {
-                    return new Error("Warning: Required prop `" + propName + "` was not specified in `" + componentName + "`");
-                }
                 if (prop !== global.document && prop !== global && !(prop instanceof HTMLElement)) {
                     return new Error("Warning: Prop `" + propName + "` must be one of the following: document, window, or an HTMLElement!");
                 }
@@ -166,6 +163,7 @@
                 this.startFrameListeners(nextProps.frame);
             }
         },
+
 
         componentWillMount: function() {
             this.startFrameListeners();
