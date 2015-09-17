@@ -168,17 +168,17 @@
         componentWillMount: function() {
             this.startFrameListeners();
             this._dragCount = 0;
-            if (window) {
-                window.addEventListener("dragover", this._handleWindowDragOverOrDrop);
-                window.addEventListener("drop", this._handleWindowDragOverOrDrop);
+            if (typeof global.addEventListener === 'function') {
+                global.addEventListener("dragover", this._handleWindowDragOverOrDrop);
+                global.addEventListener("drop", this._handleWindowDragOverOrDrop);
             }
         },
 
         componentWillUnmount: function() {
             this.stopFrameListeners();
-            if (window) {
-                window.removeEventListener("dragover", this._handleWindowDragOverOrDrop);
-                window.removeEventListener("drop", this._handleWindowDragOverOrDrop);
+            if (typeof global.removeEventListener === 'function') {
+                global.removeEventListener("dragover", this._handleWindowDragOverOrDrop);
+                global.removeEventListener("drop", this._handleWindowDragOverOrDrop);
             }
         },
 
