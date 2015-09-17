@@ -1,6 +1,9 @@
 {
     "name": "react-file-drop",
-    "author": "Kabir Sarin",
+    "author": "Moti Zilberman",
+    "contributors": [{
+        "Name": "Kabir Sarin"
+    }],
     "version": "0.1.5",
     "description": "",
     "main": "./FileDrop",
@@ -19,13 +22,13 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sarink/react-file-drop.git"
+        "url": "git+https://github.com/motiz88/react-file-drop.git"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/sarink/react-file-drop/issues"
+        "url": "https://github.com/motiz88/react-file-drop/issues"
     },
-    "homepage": "https://github.com/sarink/react-file-drop#readme",
+    "homepage": "https://github.com/motiz88/react-file-drop#readme",
     "dependencies": {
     },
     "peerDependencies": {
