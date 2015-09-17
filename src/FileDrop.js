@@ -106,40 +106,21 @@ export default class FileDrop extends React.Component {
         if (this.props.targetAlwaysVisible || this.state.draggingOverFrame) {
             fileDropTargetStyles.push((this.props.dropTargetStyles || {}).draggingOverFrame);
             if (this.state.draggingOverTarget) fileDropTargetStyles.push((this.props.dropTargetStyles || {}).draggingOverTarget);
-            fileDropTarget = < div style = {
-                Object.assign(...fileDropTargetStyles)
-            } > {
-                this.props.children
-            } < /div>;
+            fileDropTarget = <div style={Object.assign(...fileDropTargetStyles)}>{this.props.children}</div>;
         }
-        return ( < div style = {
-                this.props.style
-            }
-            onDrop = {
-                this._handleDrop
-            }
-            onDragLeave = {
-                this._handleDragLeave
-            }
-            onDragOver = {
-                this._handleDragOver
-            } > {
-                fileDropTarget
-            } < input type = 'file'
-            ref = {
-                fileInput => {
-                    this._fileInput = fileInput;
-                }
-            }
-            style = {
-                {
-                    display: 'none'
-                }
-            }
-            onChange = {
-                this._handleDrop
-            }
-            /> < /div>
+        return (
+            <div style={this.props.style}
+                onDrop={this._handleDrop}
+                onDragLeave={this._handleDragLeave}
+                onDragOver={this._handleDragOver}
+            >
+                {fileDropTarget}
+                <input type='file'
+                    ref={fileInput => {this._fileInput = fileInput;}}
+                    style= {{display: 'none'}}
+                    onChange={this._handleDrop}
+                />
+            </div>
         );
     }
 
