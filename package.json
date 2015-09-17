@@ -4,6 +4,10 @@
     "contributors": [{
         "Name": "Kabir Sarin"
     }],
+    "scripts": {
+        "build-demo": "webpack demo/index.js --output-filename demo/bundle.js",
+        "dev": "webpack-dev-server --debug --devtool eval-source-map --port 3050 demo/index.js --content-base demo/"
+    },
     "version": "0.2.0",
     "description": "",
     "main": "./FileDrop",
@@ -36,6 +40,8 @@
         "react": ">=0.13"
     },
     "devDependencies": {
+        "webpack": "^1.12.2",
+        "webpack-dev-server": "^1.11.0"
     },
     "directories": {
     }
