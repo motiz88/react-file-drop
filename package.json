@@ -4,7 +4,7 @@
     "contributors": [{
         "Name": "Kabir Sarin"
     }],
-    "version": "0.1.5",
+    "version": "0.2.0",
     "description": "",
     "main": "./FileDrop",
     "keywords": [
@@ -30,6 +30,7 @@
     },
     "homepage": "https://github.com/motiz88/react-file-drop#readme",
     "dependencies": {
+        "object-assign": "^4.0.1"
     },
     "peerDependencies": {
         "react": ">=0.13"
