@@ -170,14 +170,18 @@
         componentWillMount: function() {
             this.startFrameListeners();
             this._dragCount = 0;
-            window.addEventListener("dragover", this._handleWindowDragOverOrDrop);
-            window.addEventListener("drop", this._handleWindowDragOverOrDrop);
+            if (window) {
+                window.addEventListener("dragover", this._handleWindowDragOverOrDrop);
+                window.addEventListener("drop", this._handleWindowDragOverOrDrop);
+            }
         },
 
         componentWillUnmount: function() {
             this.stopFrameListeners();
-            window.removeEventListener("dragover", this._handleWindowDragOverOrDrop);
-            window.removeEventListener("drop", this._handleWindowDragOverOrDrop);
+            if (window) {
+                window.removeEventListener("dragover", this._handleWindowDragOverOrDrop);
+                window.removeEventListener("drop", this._handleWindowDragOverOrDrop);
+            }
         },
 
         stopFrameListeners: function(frame) {
